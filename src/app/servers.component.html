@@ -1,0 +1,26 @@
+<label>Server Name</label>
+<input
+ type="text" 
+ class="form-control"
+ (input) ="onUpdateServerName($event)">
+ <p>{{serverName}}</p>
+
+ <!-- $event is an object that is used to fetch the event data  -->
+<button 
+class="btn btn-primary" 
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">Add Server</button>
+<!-- - square brackets indicate property binding, so it overrides the HTML attribute and functions as whatever you bind it to 
+    - allownewserver becomes true after 2sec so the button is only disabled when allownewserver is false
+-->
+
+<!-- Ex of string interpolation -->
+<!-- <p>{{allowNewServer}}</p>  -->
+
+<!-- Ex of property binding -->
+<!-- <p [innerText] = "allowNewServer"></p> -->
+
+<p>{{serverCreationStatus}}</p>
+
+<app-server></app-server>
+<app-server></app-server>
